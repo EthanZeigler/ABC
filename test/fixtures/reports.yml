@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyText
+  location: MyString
+  time: 2019-03-04 20:08:38
+  involved: MyText
+  resolved: false
+
+two:
+  description: MyText
+  location: MyString
+  time: 2019-03-04 20:08:38
+  involved: MyText
+  resolved: false
