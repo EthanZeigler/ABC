@@ -11,5 +11,5 @@ module ReportsHelper
   # use bcrypt?
   def authenticate_user; end
 
-  
+
 end

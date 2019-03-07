@@ -1,0 +1,2 @@
+module SubmitReportHelper
+end
