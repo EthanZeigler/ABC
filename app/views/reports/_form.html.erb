@@ -11,13 +11,18 @@
     </div>
   <% end %>
 
+  <h2>Let us know</h2>
+  Bullying happens all the time throught every school in the world. No one should need to
+  deal with this. Ever.<br>
+  Please let us know about what you witnessed. You do not need to say who you are.<br><br>
+
   <div class="field">
-    <%= form.label :description %>
+    What happened?<br>
     <%= form.text_area :description %>
   </div>
 
   <div class="field">
-    <%= form.label :location %>
+    Where did this happen?<br>
     <%= form.text_field :location %>
   </div>
 
@@ -37,6 +42,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit :class => 'btn btn-primary' %>
   </div>
 <% end %>
