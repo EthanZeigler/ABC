@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ABC</title>
+    <title>Anti-Bully Connection</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -23,18 +23,32 @@
 
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav mr-auto">
+        <% if !current_user.nil? %>
+          <li class="nav-item disabled">
+            <a class="nav-link" href="<%= root_path %>">Welcome, <%= current_user.email.split(/@/)[0] %> <span class="sr-only">(current)</span></a>
+          </li>
+        <% end %>
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="<%= root_path %>">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
+          <a class="nav-link" href="<%= new_report_path %>">New Report</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">About</a>
         </li>
+<!--        Change for multi-user tiers-->
+        <% if !current_user.nil? %>
+          <li class="nav-item">
+            <a class="nav-link" href="<%= reports_path %>">Reports</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Report Groups</a>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+          </li>
+        <% end %>
       </ul>
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="text" placeholder="Search">
