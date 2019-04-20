@@ -1,4 +1,6 @@
 class ReportsController < ApplicationController
+  skip_before_action :authenticate_user!, only: ["new"]
+
   # GET /reports
   # GET /reports.json
   def index
