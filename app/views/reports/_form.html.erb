@@ -11,10 +11,12 @@
     </div>
   <% end %>
 
+  <% if current_user.nil? %>
   <h2>Let us know</h2>
-  Bullying happens all the time throught every school in the world. No one should need to
+  Bullying happens all the time through every school in the world. No one should need to
   deal with this. Ever.<br>
   Please let us know about what you witnessed. You do not need to say who you are.<br><br>
+  <% end %>
 
   <div class="field">
     What happened?<br>
@@ -36,7 +38,7 @@
     <%= form.text_area :involved %>
   </div>
 
-  <div class="field">
+  <div class="field <%= "d-none" if current_user.nil?%>">
     <%= form.label :resolved %>
     <%= form.check_box :resolved %>
   </div>

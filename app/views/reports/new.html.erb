@@ -2,4 +2,9 @@
 
 <%= render 'submit_form', report: @report %>
 
-<%= link_to 'Back', reports_path, :class => 'btn btn-secondary'%>
+<%= if current_user.nil?
+      link_to 'Back', home_index_path, :class => 'btn btn-secondary'
+    else
+      link_to 'Back', reports_path, class: 'btn btn-secondary'
+    end
+%>

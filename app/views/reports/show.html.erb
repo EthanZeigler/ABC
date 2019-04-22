@@ -25,5 +25,5 @@
   <%= @report.resolved %>
 </p>
 
-<%= button_to 'Edit', edit_report_path(@report), class: 'btn btn-primary'%> |
-<%= button_to 'Back', reports_path %>
+<%= button_to 'Edit', edit_report_path(@report), class: 'btn btn-primary mb-2', method: :get %>
+<%= button_to 'Back', reports_path, class: 'btn btn-secondary', method: :get %>
