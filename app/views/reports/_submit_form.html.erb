@@ -20,22 +20,22 @@
 
   <div class="field">
     What happened?<br>
-    <%= form.text_area :description , :class => 'form-control pl-3' %>
+    <%= form.text_area :description , :class => 'form-control' %>
   </div>
 
   <div class="field">
     Where did this happen?<br>
-    <%= form.text_field :location , :class => 'form-control pl-3' %>
+    <%= form.text_field :location , :class => 'form-control' %>
   </div>
 
   <div class="field">
     When did this happen?<br>
-    <%= form.datetime_select :time, class: 'form-control pl-3'%>
+    <%= form.datetime_select :time, class: 'form-control'%>
   </div>
 
   <div class="field"><br>
     Who was involved in this? Who would have seen it?<br>
-    <%= form.text_area :involved, :class => 'form-control pl-3' %>
+    <%= form.text_area :involved, :class => 'form-control' %>
   </div>
 
   <div class="field <%= "d-none" if current_user.nil?%>">

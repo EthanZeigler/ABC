@@ -14,7 +14,7 @@
     </tr>
   </thead>
 
-  <tbody class="table-striped">
+  <tbody>
     <% @reports.each do |report| %>
       <tr>
         <td><%= report.description %></td>
@@ -32,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Report', new_report_path %>
+<%= button_to 'New Report', new_report_path, class: "btn btn-primary", method: :get %>
