@@ -31,6 +31,6 @@
 /config/master.key
 
 
-.idea
+*.idea
 *.DS_Store
 .vscode
