@@ -4,4 +4,5 @@ class LinkReportGroupReport < ActiveRecord::Migration[5.2]
       t.int :category_id
       t.int :user_id
     end
+  end
 end
