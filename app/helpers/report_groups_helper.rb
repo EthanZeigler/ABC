@@ -1,0 +1,2 @@
+module ReportGroupsHelper
+end

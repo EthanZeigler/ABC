@@ -1,5 +1,7 @@
 class ReportsController < ApplicationController
   skip_before_action :authenticate_user!, only: ["new"]
+  before_action :set_report, only: ['update']
+
 
   # GET /reports
   # GET /reports.json
@@ -26,7 +28,9 @@ class ReportsController < ApplicationController
   # POST /reports
   # POST /reports.json
   def create
+    store = report_params
     @report = Report.new(report_params)
+    puts report_params
 
     respond_to do |format|
       if @report.save
@@ -61,16 +65,18 @@ class ReportsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_report
-      @report = Report.find(params[:id])
-    end
+  def set_report
+    @report = Report.find(params[:id])
+  end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def report_params
-      params.require(:report).permit(:description, :location, :involved, :resolved, :time)
-      # params.require(:location)
-      # params.require(:involved)
-      # params.require(:resolved)
-      # params.permit(:description,:location,:involved,:resolved)
-    end
+  def report_params
+    params[:report][:resolved] = (params[:report][:resolved])
+    params.require(:report).permit(:description, :location, :involved, :resolved, :time)
+
+    # params.require(:location)
+    # params.require(:involved)
+    # params.require(:resolved)
+    # params.permit(:description,:location,:involved,:resolved)
+  end
 end
