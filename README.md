@@ -1,6 +1,8 @@
 # Anti-Bully Connection
 ### A ruby on rails program for manging bullying incidents in your organization
 
+https://github.com/EthanZeigler/ABC
+
 ## Issue
 
 Bullying is a massive national problem. The idea of "snitches get stitches" is problematic for educators and administration. The idea that others will figure out who said something discorages them from getting help, and new laws such as HIB cannot be effective if people aren't willing to speak out about problems.
@@ -43,10 +45,24 @@ The goal is to be able to have the system be a sort of 'ticket manager' for thes
 - Spam detection, detecting when a single user is submitting a lot of reports that are the same or vastly different, but not in between.
 
 ## Installation
-1. Clone this repo
-2. Initialize a postgresql server accessable by the project
+1. Clone this repo on any system supporting rails.
+2. Initialize a postgresql server accessible by the project
 3. Configure src/config/database.yml with your postgres credentials. Additional details can be found at https://rubyinrails.com/2014/01/09/database-yml-rails/.
 4. Set the rails environment variable to production.
 5. Initialize the backend database. `rails db:create&& rails db:migrate`
 6. Start rails! `rails server --binding=<server-ip>`
 7. Create a login from the top right corner button of the site and get started!
+
+## Contributing
+- Join the IRC channel for communications at <insert here>
+- Issues and milestones will be managed here on GitHub.
+- Pull requests can be made to the master branch after a code review. Document code as necessary. Anything that isn't self explanatory should be explained.
+
+**Guidelines:**
+- Be respectful of other people. A person's code doesn't reflect the person's ability as a programmer or their worth as a person.
+- Take constructive criticism. Another developer isn't out to get you. They want to help you grow as a developer.
+- Focus on the scope of the project. No scope creep here!
+
+### Known issues
+- Anyone can make a user. Edits to devise needed.
+- Server lag when generating groupings
