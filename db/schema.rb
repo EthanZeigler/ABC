@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2019_04_22_191718) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "report_groups", force: :cascade do |t|
     t.text "name"
     t.datetime "created_at", null: false
@@ -19,10 +22,10 @@ ActiveRecord::Schema.define(version: 2019_04_22_191718) do
   end
 
   create_table "report_groups_reports", id: false, force: :cascade do |t|
-    t.integer "report_id", null: false
-    t.integer "report_group_id", null: false
-    t.index [nil], name: "index_report_groups_reports_on_category_id"
-    t.index [nil], name: "index_report_groups_reports_on_user_id"
+    t.bigint "report_id", null: false
+    t.bigint "report_group_id", null: false
+    t.integer "category_id"
+    t.integer "user_id"
   end
 
   create_table "reports", force: :cascade do |t|
