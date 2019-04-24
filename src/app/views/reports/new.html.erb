@@ -2,6 +2,7 @@
 
 <%= render 'submit_form', report: @report %>
 
+<!--Load the home index if no login, the show if logged in-->
 <%= if current_user.nil?
       link_to 'Back', home_index_path, :class => 'btn btn-secondary'
     else

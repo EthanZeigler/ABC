@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
+
     <title>Anti-Bully Connection</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+<!--    Load bootstrap resources-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <link href="https://bootswatch.com/4/minty/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
@@ -15,7 +17,9 @@
   </head>
 
   <body>
+<!--Navigation-->
   <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+<!--    Load based on user or not-->
     <a class="navbar-brand" href="<%= root_path %>"><%= if current_user.nil?; "Anti-Bully Connection"; else "Welcome, " + current_user.email.split(/@/)[0] end%></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -23,6 +27,7 @@
 
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav mr-auto">
+<!--        student view-->
         <% if current_user.nil? %>
         <li class="nav-item">
           <a class="nav-link" href="<%= root_path %>">Home<span class="sr-only">(current)</span></a>
@@ -46,6 +51,7 @@
           </li>
         <% end %>
       </ul>
+<!--      Login if not-->
       <% if current_user.nil? %>
         <a href="<%= new_user_session_path %>" class="btn btn-secondary ml-2">Staff Login</a>
       <% else %>
@@ -58,6 +64,7 @@
     </div>
   </nav>
   <div class="m-4">
+<!--    Content-->
     <%= yield %>
   </div>
   </body>

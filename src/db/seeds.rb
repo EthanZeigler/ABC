@@ -19,6 +19,7 @@ require 'faker'
 #     t.datetime "updated_at", null: false
 
 for i in 0..10000
+  # seed fake reports
   params = {
     description: Faker::Lorem.paragraph,
     location: Faker::RickAndMorty.location,
